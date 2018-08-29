@@ -25,21 +25,20 @@ Backup_Env(){
     cp ${process_folder}*.py ${process_backup}${time}
 }
 
-Git_Clone(){
-    # 克隆新版替换线上*.py
+reload_system(){
 
-    cd ${process_backup}
-
-    git clone https://github.com/adlab-zilong/data_analysis_DB.git
+    cd /data1/www/test_kxx
+    unzip -o -d ./ ./data_analysis_package.zip
     
-    mv ${process_folder_name}/python/*.py ../
+    mv ./LX_data_analysis_DB/python/*.py ${process_folder}
 
-    rm -rf ${process_folder_name}
+    rm -rf ./LX_data_analysis_DB
+    rm -rf ./data_analysis_package.zip
 }
 
 find_process
 Backup_Env
-Git_Clone
+reload_system
 
 
 

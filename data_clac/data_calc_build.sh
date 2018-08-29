@@ -23,18 +23,17 @@ Backup_Env(){
     cp ${process_folder}*.py ${process_backup}${time} 
 } 
  
-Git_Clone(){ 
+reload_system(){ 
  
-    cd ${process_backup} 
- 
-    git clone https://github.com/adlab-zilong/data_calc.git 
-    
-    mv ${process_folder_name}/money_clac/*.py ../
-    mv ${process_folder_name}/KPI_clac/*.py ../
-    mv ${process_folder_name}/report/*.py ../
-    rm -rf ${process_folder_name}
+    cd /data1/www/test_kxx 
+    unzip -o -d ./ ./data_clac_package.zip 
+    mv ./LX_data_clac/money_clac/*.py ${process_folder}
+    mv ./LX_data_clac/KPI_clac/*.py ${process_folder}
+    mv ./LX_data_clac/report/*.py ${process_folder}
+    rm -rf ./LX_data_clac
+    rm -rf ./data_clac_package.zip
 }
 
 find_process
 Backup_Env
-Git_Clone
+reload_system

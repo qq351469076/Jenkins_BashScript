@@ -1,0 +1,40 @@
+连接windows节点
+
+cd C:\Jenkins\workspace
+python data_analysis_package.py
+
+
+
+
+
+
+
+
+
+
+Jenkins平台上：
+
+BUILD_ID=dontKillMe
+
+cd /data1/www/test_kxx
+./data_analysis_build.sh
+
+
+
+
+cd /var/www/data_analysis/
+nohup python nohup_run.py > nohup.out 2>&1 &
+
+sleep 1m
+
+pid_id=`ps -ef | grep nohup_run.py | grep -v grep | awk '{print $2}'`
+
+if [ $pid_id != "" ];then
+    echo 'yes'
+else
+    echo 'no'
+    exit 1
+filse
+    echo 'no'
+    exit 1
+fi

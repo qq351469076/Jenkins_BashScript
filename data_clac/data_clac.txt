@@ -1,0 +1,32 @@
+连接windows节点
+
+cd C:\Jenkins\workspace
+python data_clac_package.py
+
+
+
+
+
+
+
+BUILD_ID=dontKillMe
+
+cd /data1/www/test_kxx
+./data_calc_build.sh
+
+
+
+
+cd /var/www/data_calc
+nohup python nohup_run_clac.py > nohup.out 2>&1 &
+
+sleep 1m
+
+pid_id=`ps -ef | grep nohup_run_clac.py | grep -v grep | awk '{print $2}'`
+
+if [ $pid_id != "" ];then
+    echo 'yes'
+else
+    echo 'no'
+    exit 1
+fi
