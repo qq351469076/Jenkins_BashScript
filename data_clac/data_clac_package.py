@@ -20,6 +20,6 @@ def make_zip(source_dir, output_filename):
 
 
 if __name__ == '__main__':
-    make_zip(r'C:\Jenkins\workspace\LX_data_clac', 'data_clac_package.zip')
-    # 注意改登陆用户名和ip
-    os.system(r'pscp -i C:\data_server\150_linux.ppk C:\Jenkins\workspace\data_clac_package.zip xxxx@xxx.xxx.xxx.xxx:/data1/www/test_kxx/')
+	os.system('svn update C:\\Jenkins\\workspace\\data_clac')
+	make_zip(r'C:\Jenkins\workspace\data_clac', 'data_clac_package.zip')
+	os.system(r'pscp -i C:\data_server\150_linux.ppk C:\Jenkins\workspace\data_clac_package.zip ****@***.**.***.***:/data1/www/test_kxx/')

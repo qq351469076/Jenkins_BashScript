@@ -30,9 +30,9 @@ reload_system(){
     cd /data1/www/test_kxx
     unzip -o -d ./ ./data_analysis_package.zip
     
-    mv ./LX_data_analysis_DB/python/*.py ${process_folder}
+    mv ./python/*.py ${process_folder}
 
-    rm -rf ./LX_data_analysis_DB
+    rm -rf ./python
     rm -rf ./data_analysis_package.zip
 }
 

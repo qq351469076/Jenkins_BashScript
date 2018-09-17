@@ -1,20 +1,25 @@
-连接windows节点
+限制windows节点
 
 https://127.0.0.1/svn/DSP_web
 
 
-执行windows命令
-cd C:\Jenkins\workspace
-python dsp_web.py
-echo '11111111111111111111111111111111111111111111111111111'
+python C:\Jenkins\workspace\dsp_web.py
 
 
-执行shell
+
+
+
+
+
+
+
 #!/bin/bash -ilex
 BUILD_ID=dontKillMe
 
-sudo -iu pdop sh -c "pm2 stop /data1/www/DSP/DSP_web/app.json"
 cd /data1/www/monitor
+
+sudo -iu pdop sh -c "pm2 stop /data1/www/DSP/DSP_web/app.json"
+
 ./LP_ABTest.sh
 
 sudo -iu pdop sh -c "pm2 restart /data1/www/DSP/DSP_web/app.json"

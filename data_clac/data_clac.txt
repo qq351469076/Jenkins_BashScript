@@ -1,8 +1,6 @@
-连接windows节点
+限制windows节点
 
-cd C:\Jenkins\workspace
-python data_clac_package.py
-
+python C:\Jenkins\workspace\data_clac_package.py
 
 
 

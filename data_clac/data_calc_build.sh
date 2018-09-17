@@ -3,7 +3,6 @@
 process_name='nohup_run_clac.py'
 process_folder='/var/www/data_calc/'
 process_backup='/var/www/data_calc/Jenkins_backup/'
-process_folder_name='data_calc' 
  
 find_process(){ 
  
@@ -27,10 +26,10 @@ reload_system(){
  
     cd /data1/www/test_kxx 
     unzip -o -d ./ ./data_clac_package.zip 
-    mv ./LX_data_clac/money_clac/*.py ${process_folder}
-    mv ./LX_data_clac/KPI_clac/*.py ${process_folder}
-    mv ./LX_data_clac/report/*.py ${process_folder}
-    rm -rf ./LX_data_clac
+    mv ./data_clac/money_clac/*.py ${process_folder}
+    mv ./data_clac/KPI_clac/*.py ${process_folder}
+    mv ./data_clac/report/*.py ${process_folder}
+    rm -rf ./data_clac
     rm -rf ./data_clac_package.zip
 }
 

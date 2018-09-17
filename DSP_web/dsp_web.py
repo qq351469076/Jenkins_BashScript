@@ -3,7 +3,6 @@
 import sys
 import zipfile
 import os
-from shutil import rmtree
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -21,5 +20,6 @@ def make_zip(source_dir, output_filename):
 
 
 if __name__ == '__main__':
-    make_zip('C:\\Jenkins\\workspace\\SXQ_LP_ABTest\\DSP_web', 'C:\\Jenkins\\workspace\\DSP_web.zip')
+    os.system('svn update C:\\Jenkins\\workspace\\DSP_web')	# 更新本地svn目录
+    make_zip('C:\\Jenkins\\workspace\\DSP_web\\DSP_web', 'C:\\Jenkins\\workspace\\DSP_web.zip')	# 压缩
     os.system(r'pscp -i C:\data_server\60_linux.ppk C:\Jenkins\workspace\DSP_web.zip ****@***.**.**.**:/data1/www/monitor/')
