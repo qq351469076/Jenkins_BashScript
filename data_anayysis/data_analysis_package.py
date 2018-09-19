@@ -21,5 +21,5 @@ def make_zip(source_dir, output_filename):
 
 if __name__ == '__main__':
 	os.system('svn update C:\\Jenkins\\workspace\\data_analysis')	# 更新到最新版本
-	make_zip(r'C:\Jenkins\workspace\data_analysis\python', 'data_analysis_package.zip')
-	os.system(r'pscp -i C:\data_server\150_linux.ppk C:\Jenkins\workspace\data_analysis_package.zip xxxx@xxx.xx.xxx.xxx:/data1/www/test_kxx/')
+	make_zip('C:\\Jenkins\\workspace\\data_analysis\\python', 'C:\\Jenkins\\workspace\\data_analysis_package.zip')
+	os.system(r'pscp -i C:\data_server\150_linux.ppk C:\Jenkins\workspace\data_analysis_package.zip ****@***.**.***.***:/data1/www/test_kxx/')
