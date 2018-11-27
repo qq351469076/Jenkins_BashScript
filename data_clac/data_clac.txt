@@ -6,21 +6,24 @@ python C:\Jenkins\workspace\data_clac_package.py
 
 
 
-
+150服务器
 BUILD_ID=dontKillMe
 
 cd /data1/www/test_kxx
+
+python ./kill_process.py nohup_run_clac.py
+
 ./data_calc_build.sh
 
-
-
-
 cd /var/www/data_calc
+
 nohup python nohup_run_clac.py > nohup.out 2>&1 &
 
 sleep 1m
 
-pid_id=`ps -ef | grep nohup_run_clac.py | grep -v grep | awk '{print $2}'`
+cd /data1/www/test_kxx
+
+python ./find_process.py nohup_run_clac.py=`ps -ef | grep nohup_run_clac.py | grep -v grep | awk '{print $2}'`
 
 if [ $pid_id != "" ];then
     echo 'yes'

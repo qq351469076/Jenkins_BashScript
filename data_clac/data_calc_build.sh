@@ -4,16 +4,6 @@ process_name='nohup_run_clac.py'
 process_folder='/var/www/data_calc/'
 process_backup='/var/www/data_calc/Jenkins_backup/'
  
-find_process(){ 
- 
-    for temp in `ps aux| grep ${process_name} | grep -v grep | awk '{print $2}'` 
-    do 
-        id=${temp} 
-    done 
-         
-    kill -9 ${id} 
-} 
- 
 Backup_Env(){ 
      
     time=$(date +%Y%m%d%H%M) 
@@ -33,6 +23,5 @@ reload_system(){
     rm -rf ./data_clac_package.zip
 }
 
-find_process
 Backup_Env
 reload_system

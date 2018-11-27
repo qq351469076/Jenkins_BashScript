@@ -1,0 +1,21 @@
+windows节点
+python C:\Jenkins\workspace\data_analysis_package.py
+
+150服务器
+BUILD_ID=dontKillMe
+
+cd /data1/www/test_kxx
+
+python ./kill_process.py nohup_run.py
+
+./data_analysis_build.sh
+
+cd /var/www/data_analysis
+
+nohup python nohup_run.py > nohup.out 2>&1 &
+
+sleep 1m
+
+cd /data1/www/test_kxx
+
+python ./find_process.py nohup_run.py

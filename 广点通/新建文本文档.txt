@@ -1,0 +1,24 @@
+windows节点
+
+python C:\Jenkins\workspace\media_API.py
+
+
+
+85服务器
+BUILD_ID=dontKillMe
+
+cd /data1/www/test_kxx
+
+python ./kill_process.py nohup_run_media.py
+
+./media_api.sh
+
+cd /data1/www/data_media_API
+
+nohup python nohup_run_media.py > nohup.out 2>&1 &
+
+sleep 1m
+
+cd /data1/www/test_kxx
+
+python ./find_process.py nohup_run_media.py

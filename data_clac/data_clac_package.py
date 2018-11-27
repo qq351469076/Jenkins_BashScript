@@ -22,4 +22,4 @@ def make_zip(source_dir, output_filename):
 if __name__ == '__main__':
 	os.system('svn update C:\\Jenkins\\workspace\\data_clac')
 	make_zip('C:\\Jenkins\\workspace\\data_clac', 'C:\\Jenkins\\workspace\\data_clac_package.zip')
-	os.system(r'pscp -i C:\data_server\150_linux.ppk C:\Jenkins\workspace\data_clac_package.zip ****@***.**.***.***:/data1/www/test_kxx/')
+	os.system('pscp -i C:\\data_server\\150_linux.ppk C:\\Jenkins\\workspace\\data_clac_package.zip pdop@***:/data1/www/test_kxx/')

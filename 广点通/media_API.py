@@ -20,6 +20,6 @@ def make_zip(source_dir, output_filename):
 
 
 if __name__ == '__main__':
-	os.system('svn update C:\\Jenkins\\workspace\\data_analysis')	# 更新到最新版本
-	make_zip('C:\\Jenkins\\workspace\\data_analysis\\python', 'C:\\Jenkins\\workspace\\data_analysis_package.zip')
-	os.system('pscp -i C:\\data_server\\150_linux.ppk C:\\Jenkins\\workspace\\data_analysis_package.zip pdop@**********0:/data1/www/test_kxx/')
+	os.system('svn update C:\\Jenkins\\workspace\\media_API')
+	make_zip('C:\\Jenkins\\workspace\\media_API', 'C:\\Jenkins\\workspace\\media_API.zip')
+	os.system('pscp -i C:\\data_server\\85_linux.ppk C:\\Jenkins\\workspace\\media_API.zip pdmarketing@******:/data1/www/test_kxx')
