@@ -16,6 +16,11 @@ nohup python nohup_run.py > nohup.out 2>&1 &
 
 sleep 1m
 
-cd /data1/www/test_kxx
+pid_id=`ps -ef | grep nohup_run.py | grep -v grep | awk '{print $2}'`
 
-python ./find_process.py nohup_run.py
+if [ "${pid_id}" != "" ];then
+    echo 'yes'
+else
+    echo 'no'
+    exit 1
+fi

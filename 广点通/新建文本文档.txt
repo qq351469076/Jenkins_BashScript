@@ -9,16 +9,22 @@ BUILD_ID=dontKillMe
 
 cd /data1/www/test_kxx
 
-python ./kill_process.py nohup_run_media.py
+python /data1/www/test_kxx/kill_process.py nohup_run_media.py
 
-./media_api.sh
+/data1/www/test_kxx/media_api.sh
 
 cd /data1/www/data_media_API
 
-nohup python nohup_run_media.py > nohup.out 2>&1 &
+nohup python /data1/www/test_kxx/nohup_run_media.py > nohup.out 2>&1 &
 
 sleep 1m
 
-cd /data1/www/test_kxx
+pid_id=`ps -ef | grep nohup_run_media.py | grep -v grep | awk '{print $2}'`
 
-python ./find_process.py nohup_run_media.py
+if [ "${pid_id}" != "" ];then
+    echo 'yes'
+else
+    echo 'no'
+    exit 1
+fi
+
